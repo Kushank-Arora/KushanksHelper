@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    tools:context=".AddAnAppProfile">
+
+    <Button
+        android:id="@+id/bSelectApp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Select the app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAppNameLabel"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="App"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bSelectApp" />
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvAppNameLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvAppNameLabel"
+        tools:text="Application Name" />
+
+    <TextView
+        android:id="@+id/tvDaysLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Days"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tbMonday"
+        app:layout_constraintEnd_toEndOf="@+id/tvAppNameLabel"
+        app:layout_constraintStart_toStartOf="@+id/tvAppNameLabel"
+        app:layout_constraintTop_toTopOf="@+id/tbMonday" />
+
+    <ToggleButton
+        android:id="@+id/tbMonday"
+        style="@style/ToggleButtonDays"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textOff="M"
+        android:textOn="M"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@+id/tvDaysLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppNameLabel" />
+
+    <ToggleButton
+        android:id="@+id/tbTuesday"
+        style="@style/ToggleButtonDays"
+        android:checked="true"
+        android:textOff="T"
+        android:textOn="T"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintStart_toEndOf="@+id/tbMonday"
+        app:layout_constraintTop_toTopOf="@+id/tbMonday" />
+
+    <ToggleButton
+        android:id="@+id/tbWednesday"
+        style="@style/ToggleButtonDays"
+        android:checked="false"
+        android:textOff="W"
+        android:textOn="W"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintStart_toEndOf="@+id/tbTuesday"
+        app:layout_constraintTop_toTopOf="@+id/tbTuesday" />
+
+    <ToggleButton
+        android:id="@+id/tbThursday"
+        style="@style/ToggleButtonDays"
+        android:layout_marginStart="8dp"
+        android:checked="false"
+        android:textOff="T"
+        android:textOn="T"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintStart_toEndOf="@+id/tbWednesday"
+        app:layout_constraintTop_toTopOf="@+id/tbWednesday" />
+
+    <ToggleButton
+        android:id="@+id/tbFriday"
+        style="@style/ToggleButtonDays"
+        android:checked="false"
+        android:textOff="F"
+        android:textOn="F"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintStart_toEndOf="@+id/tbThursday"
+        app:layout_constraintTop_toTopOf="@+id/tbThursday" />
+
+    <ToggleButton
+        android:id="@+id/tbSaturday"
+        style="@style/ToggleButtonDays"
+        android:checked="false"
+        android:textOff="S"
+        android:textOn="S"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintStart_toEndOf="@+id/tbFriday"
+        app:layout_constraintTop_toTopOf="@+id/tbFriday" />
+
+    <ToggleButton
+        android:id="@+id/tbSunday"
+        style="@style/ToggleButtonDays"
+        android:checked="false"
+        android:textOff="S"
+        android:textOn="S"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintStart_toEndOf="@+id/tbSaturday"
+        app:layout_constraintTop_toTopOf="@+id/tbSaturday" />
+
+    <TextView
+        android:id="@+id/tvIntervalsLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Intervals (Optional)"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvDaysLabel"
+        app:layout_constraintStart_toStartOf="@+id/tvDaysLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvDaysLabel" />
+
+    <TextView
+        android:id="@+id/tvMaxTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Max Time"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvIntervalsLabel"
+        app:layout_constraintStart_toStartOf="@+id/tvIntervalsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvIntervalsLabel" />
+
+    <EditText
+        android:id="@+id/etStartTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:hint="Start Time"
+        android:paddingTop="4dp"
+        android:focusable="false"
+        android:paddingBottom="4dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etTo"
+        app:layout_constraintEnd_toStartOf="@+id/etTo"
+        app:layout_constraintStart_toEndOf="@+id/tvIntervalsLabel" />
+
+    <TextView
+        android:id="@+id/etTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:text="to"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvIntervalsLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvIntervalsLabel" />
+
+    <EditText
+        android:id="@+id/etEndTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:hint="End Time"
+        android:focusable="false"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:background="@android:color/transparent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etTo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etTo" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginEnd="16dp"
+        android:text="minutes"
+        android:textColor="#333"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sbMaxDuration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sbMaxDuration" />
+
+    <SeekBar
+        android:id="@+id/sbMaxDuration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:max="100"
+        android:progress="10"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMaxTime"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/tvMaxTime"
+        app:layout_constraintTop_toTopOf="@+id/tvMaxTime" />
+
+    <TextView
+        android:id="@+id/tvThumbMaxValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/sbMaxDuration"
+        app:layout_constraintStart_toEndOf="@+id/tvMaxTime"
+        android:text="10" />
+
+</android.support.constraint.ConstraintLayout>

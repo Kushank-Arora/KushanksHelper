@@ -1,6 +1,6 @@
 <resources>
 
-    <!-- Base application theme. -->
+`    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -16,5 +16,14 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ToggleButtonDays">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:background">@drawable/style_toggle_button</item>
+        <item name="android:textColor">@color/toggle_color</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 
 </resources>

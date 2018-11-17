@@ -19,6 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddAnAppProfile"
+            android:label="Add App Profile"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".SelectApp"
+            android:label="Select Application"></activity>
     </application>
 
 </manifest>
