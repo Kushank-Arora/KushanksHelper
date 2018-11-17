@@ -36,6 +36,12 @@ public class AddAnAppProfile extends AppCompatActivity {
     @BindView(R.id.etEndTime)
     EditText endTimeEt;
 
+    @BindView(R.id.tvMaxTimePlus)
+    TextView maxTimePlusTv;
+
+    @BindView(R.id.tvMaxTimeMinus)
+    TextView maxTimeMinusTv;
+
     String appPackageName;
     Timer scheduledDisappearance;
 
@@ -75,6 +81,18 @@ public class AddAnAppProfile extends AppCompatActivity {
                 showTimePicker(v);
             }
         });
+        maxTimePlusTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                maxDurationSb.setProgress(maxDurationSb.getProgress() == maxDurationSb.getMax() ? maxDurationSb.getMax() : maxDurationSb.getProgress()+1);
+            }
+        });
+        maxTimeMinusTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                maxDurationSb.setProgress(maxDurationSb.getProgress() == 0 ? 0 : maxDurationSb.getProgress()-1 );
+            }
+        });
     }
 
     private void showTimePicker(final View v) {
@@ -110,13 +128,13 @@ public class AddAnAppProfile extends AppCompatActivity {
                 int xPosition = progress * widthSeekBar / seekBar.getMax();
                 thumbMaxValueTv.setText(String.valueOf(progress));
                 thumbMaxValueTv.setX(seekBar.getX() + xPosition + seekBar.getThumbOffset());
+                thumbMaxValueTv.setVisibility(View.VISIBLE);
+                scheduledDisappearance.cancel();
+                scheduledDisappearance = new Timer();
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                thumbMaxValueTv.setVisibility(View.VISIBLE);
-                scheduledDisappearance.cancel();
-                scheduledDisappearance = new Timer();
             }
 
             @Override
