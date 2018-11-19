@@ -18,10 +18,10 @@ public class Utils {
     ));
 
     public class TimeInterval {
-        private int startTime; // In milliseconds
-        private int endTime; // In milliseconds
-        private String day;
-        private Date date; // Optional, used in Tracking
+        public int startTime; // In milliseconds
+        public int endTime; // In milliseconds
+        public String day;
+        public Date date; // Optional, used in Tracking
     }
 
     public class Date {

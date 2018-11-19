@@ -24,6 +24,7 @@ import com.kushank.kushankshelper.adapters.ApplicationAdapter;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -91,13 +92,15 @@ public class SelectApp extends AppCompatActivity {
     }
 
     public void modifyList(String appName) {
-        appName = appName.toUpperCase();
-        listOfAppsToShow.clear();
-        for(Pair<String, Drawable> pair: listOfApps){
-            if (pair.first.toUpperCase().contains(appName)) {
-                listOfAppsToShow.add(pair);
+        try {
+            appName = appName.toUpperCase();
+            listOfAppsToShow.clear();
+            for (Pair<String, Drawable> pair : listOfApps) {
+                if (pair.first.toUpperCase().contains(appName)) {
+                    listOfAppsToShow.add(pair);
+                }
             }
-        }
+        } catch(ConcurrentModificationException ignored) {}
         appAdapter.notifyDataSetChanged();
     }
 

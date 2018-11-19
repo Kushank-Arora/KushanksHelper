@@ -157,7 +157,7 @@ public class AddAnAppProfile extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
+        if (requestCode == 1 && data != null) {
             String appName = data.getStringExtra("appName");
 
             this.appPackageName = data.getStringExtra("appPackage");

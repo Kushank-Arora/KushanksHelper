@@ -26,6 +26,10 @@
         <activity
             android:name=".SelectApp"
             android:label="Select Application"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="bf9460b7824932c8222f39649e03b6cc45d2ab57" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
